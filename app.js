@@ -36,7 +36,8 @@ app.get('/bookmarks/:id', (req,res) => {
    console.log(err);
    res.status(500).send("Error");
  } else {
-   res.status(200).send({'message': 'Bookmark found'});
+   res.status(200).send({'message': 'Bookmark found',
+  ...results[0]});
  }
  })  
 })
